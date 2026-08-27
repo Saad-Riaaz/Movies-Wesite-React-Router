@@ -1,0 +1,140 @@
+.genreMoviesPage {
+    min-height: 100vh;
+    padding: 40px 30px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.genreMoviesPage h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* =========================
+   MOVIE SLIDER
+========================= */
+
+.genreMoviesPage .movieSlider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+    scroll-behavior: smooth;
+}
+
+.genreMoviesPage .movieSlider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.genreMoviesPage .movieSlider::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.genreMoviesPage .movieSlider::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* =========================
+   MOVIE LINK
+========================= */
+
+.genreMoviesPage .movieLink {
+    text-decoration: none;
+    color: inherit;
+    flex: 0 0 auto;
+}
+
+/* =========================
+   MOVIE CARD
+========================= */
+
+.genreMoviesPage .homeMovieCard {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--card);
+    transition: 0.3s ease;
+}
+
+.genreMoviesPage .homeMovieCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   POSTER
+========================= */
+
+.genreMoviesPage .homeMovieCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.genreMoviesPage .movieOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 35px 12px 12px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.95)
+    );
+
+    color: white;
+}
+
+.genreMoviesPage .movieOverlay h2 {
+    font-size: 16px;
+    margin: 0 0 6px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.genreMoviesPage .movieOverlay p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .genreMoviesPage {
+        padding: 30px 15px;
+    }
+
+    .genreMoviesPage h1 {
+        font-size: 26px;
+    }
+
+    .genreMoviesPage .homeMovieCard {
+        width: 160px;
+        height: 240px;
+    }
+
+    .genreMoviesPage .movieOverlay h2 {
+        font-size: 14px;
+    }
+}

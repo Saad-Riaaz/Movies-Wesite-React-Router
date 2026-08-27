@@ -1,0 +1,325 @@
+
+/* ==============================
+   HERO BANNER
+============================== */
+
+.heroBanner {
+    position: relative;
+
+    width: 100%;
+    height: 550px;
+
+    overflow: hidden;
+
+    margin-bottom: 45px;
+
+    border-radius: 0 0 25px 25px;
+}
+
+
+/* ==============================
+   HERO IMAGE
+============================== */
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: brightness(0.65);
+}
+
+
+/* ==============================
+   HERO OVERLAY
+============================== */
+
+.heroOverlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(0, 0, 0, 0.65) 40%,
+            rgba(0, 0, 0, 0.15) 100%
+        );
+}
+
+
+/* ==============================
+   HERO CONTENT
+============================== */
+
+.heroContent {
+    width: 50%;
+
+    margin-left: 60px;
+
+    color: white;
+}
+
+
+.heroTag {
+    color: #e50914;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.heroTitle {
+    font-size: 52px;
+
+    margin-bottom: 12px;
+
+    line-height: 1.1;
+}
+
+
+.heroRating {
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+
+.heroDescription {
+    max-width: 600px;
+
+    color: #d1d5db;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    display: -webkit-box;
+    /* -webkit-line-clamp: 3; */
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   HERO BUTTONS
+============================== */
+
+.heroButtons {
+    display: flex;
+
+    gap: 15px;
+}
+
+
+.watchButton,
+.detailsButton {
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+
+.watchButton {
+    background: #e50914;
+
+    color: white;
+}
+
+
+.watchButton:hover {
+    background: #ff1a25;
+
+    transform: translateY(-2px);
+}
+
+
+.detailsButton {
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: white;
+
+    backdrop-filter: blur(8px);
+}
+
+
+.detailsButton:hover {
+    background: rgba(255, 255, 255, 0.22);
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 768px) {
+
+    .heroBanner {
+        height: 500px;
+    }
+
+    .heroOverlay {
+        background:
+            linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.95) 10%,
+                rgba(0, 0, 0, 0.45) 100%
+            );
+    }
+
+    .heroContent {
+        width: 90%;
+
+        margin-left: 25px;
+
+        margin-top: 100px;
+    }
+
+    .heroTitle {
+        font-size: 36px;
+    }
+
+    .heroDescription {
+        font-size: 14px;
+    }
+
+}
+
+
+
+.homeMovies {
+    padding: 50px 5%;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.homeMovies > h1 {
+    color: var(--text);
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.movieSlider {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 10px 5px 25px;
+
+    scroll-behavior: smooth;
+}
+
+.movieSlider::-webkit-scrollbar {
+    height: 6px;
+}
+
+.movieSlider::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+.homeMovieCard {
+    position: relative;
+
+    flex: 0 0 190px;
+
+    height: 280px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+.homeMovieCard img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.homeMovieCard:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.homeMovieCard:hover img {
+    transform: scale(1.12);
+}
+
+.movieOverlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 35px 12px 12px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.9)
+    );
+
+    transform: translateY(20px);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+.homeMovieCard:hover .movieOverlay {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.movieOverlay h2 {
+    color: white;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.movieOverlay p {
+    color: #facc15;
+
+    font-size: 14px;
+}
+.movieLink {
+    display: block;
+    flex: 0 0 190px;
+
+    text-decoration: none;
+    color: inherit;
+}

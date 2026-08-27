@@ -1,0 +1,157 @@
+
+
+.contactPage {
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Heading */
+
+.contactPage h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.contactPage h2 {
+    max-width: 650px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--secondary-text);
+    margin-bottom: 35px;
+}
+
+/* ==============================
+   FORM
+============================== */
+
+.contactPage form {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Labels */
+
+.contactPage label {
+    width: 100%;
+}
+
+/* Inputs */
+
+.contactPage input,
+.contactPage textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+/* Placeholder */
+
+.contactPage input::placeholder,
+.contactPage textarea::placeholder {
+    color: var(--secondary-text);
+}
+
+/* Focus */
+
+.contactPage input:focus,
+.contactPage textarea:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Message box */
+
+.contactPage textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* ==============================
+   SUBMIT BUTTON
+============================== */
+
+.contactPage button {
+    margin-top: 5px;
+    padding: 14px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.contactPage button:hover {
+    transform: translateY(-2px);
+
+    background: var(--primary-hover);
+
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.contactPage button:active {
+    transform: translateY(0);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 600px) {
+
+    .contactPage {
+        padding: 40px 15px;
+    }
+
+    .contactPage h1 {
+        font-size: 32px;
+    }
+
+    .contactPage h2 {
+        font-size: 15px;
+    }
+
+    .contactPage form {
+        padding: 22px;
+    }
+}
+

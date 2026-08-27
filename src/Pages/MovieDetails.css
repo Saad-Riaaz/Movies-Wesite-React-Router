@@ -1,0 +1,948 @@
+/* =========================================================
+   MOVIE DETAILS PAGE
+   Dark + Red Theme
+   ========================================================= */
+
+.movieDetails {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  padding: 35px 25px 70px;
+
+  background: #0D1117;
+  color: #F8FAFC;
+
+  /* Poster + Movie Info */
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+
+  column-gap: 50px;
+  row-gap: 0;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   POSTER
+   ========================================================= */
+
+.moviePoster {
+  width: 290px;
+  flex-shrink: 0;
+}
+
+.moviePoster img {
+  width: 100%;
+  height: 430px;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.55),
+    0 0 20px rgba(229, 9, 20, 0.12);
+}
+
+
+/* =========================================================
+   MOVIE INFORMATION
+   ========================================================= */
+
+.movieInfo {
+  min-width: 0;
+  padding-top: 5px;
+}
+
+.movieInfo h1 {
+  margin: 0 0 14px;
+
+  font-size: 38px;
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  color: #F8FAFC;
+}
+
+
+/* Red line under title */
+
+.movieInfo h1::after {
+  content: "";
+
+  display: block;
+
+  width: 55px;
+  height: 3px;
+
+  margin-top: 10px;
+
+  background: #E50914;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================================
+   RATING
+   ========================================================= */
+
+.movieRating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #E50914;
+}
+
+.movieRating span {
+  font-size: 14px;
+  font-weight: 400;
+
+  color: #94A3B8;
+}
+
+
+/* =========================================================
+   BASIC META
+   ========================================================= */
+
+.movieMeta {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px 25px;
+
+  margin-bottom: 18px;
+}
+
+.movieMeta p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #94A3B8;
+}
+
+.movieMeta strong {
+  color: #F8FAFC;
+}
+
+
+/* =========================================================
+   GENRES
+   ========================================================= */
+
+.movieGenres {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
+}
+
+.movieGenres > strong {
+  padding-top: 7px;
+
+  color: #F8FAFC;
+
+  white-space: nowrap;
+}
+
+.genreTags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.genreTags span {
+  padding: 6px 12px;
+
+  border: 1px solid #30363D;
+
+  border-radius: 20px;
+
+  background: #161B22;
+
+  font-size: 12px;
+
+  color: #94A3B8;
+
+  transition: 0.25s ease;
+}
+
+.genreTags span:hover {
+  border-color: #E50914;
+
+  color: #F8FAFC;
+}
+
+
+/* =========================================================
+   OVERVIEW
+   ========================================================= */
+
+.overview {
+  margin-top: 12px;
+}
+
+.overview h2 {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+
+  color: #F8FAFC;
+}
+
+.overview p {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #94A3B8;
+}
+
+
+/* =========================================================
+   WATCH TRAILER BUTTON
+   ========================================================= */
+
+.DetailWatchBtn {
+  margin-top: 18px;
+
+  padding: 11px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #E50914;
+
+  color: #FFFFFF;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.DetailWatchBtn:hover {
+  background: #FF1A1A;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 20px rgba(229, 9, 20, 0.25);
+}
+
+.DetailWatchBtn:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.extraMovieDetails > h2,
+.castSection > h2,
+.similarSection > h2,
+.productionSection > h2 {
+  position: relative;
+
+  margin: 0 0 22px;
+
+  font-size: 25px;
+
+  color: #F8FAFC;
+}
+
+
+/* Red line under section headings */
+
+.extraMovieDetails > h2::after,
+.castSection > h2::after,
+.similarSection > h2::after,
+.productionSection > h2::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 3px;
+
+  margin-top: 8px;
+
+  background: #E50914;
+
+  border-radius: 5px;
+}
+
+
+/* =========================================================
+   EXTRA MOVIE DETAILS
+   Full width BELOW top section
+   ========================================================= */
+
+.extraMovieDetails {
+  grid-column: 1 / -1;
+
+  margin-top: 45px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid #21262D;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+   ========================================================= */
+
+.detailsGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+}
+
+.detailCard {
+  min-height: 90px;
+
+  padding: 17px;
+
+  background: #161B22;
+
+  border: 1px solid #21262D;
+
+  border-radius: 12px;
+
+  transition: 0.25s ease;
+}
+
+.detailCard:hover {
+  border-color: #E50914;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.08);
+}
+
+.detailCard h3 {
+  margin: 0 0 8px;
+
+  font-size: 14px;
+
+  color: #94A3B8;
+}
+
+.detailCard p {
+  margin: 0;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #F8FAFC;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   PRODUCTION COMPANIES
+   ========================================================= */
+
+.productionSection {
+  margin-top: 35px;
+}
+
+.productionCompanies {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.companyCard {
+  width: 150px;
+
+  min-height: 100px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 12px;
+
+  background: #161B22;
+
+  border: 1px solid #21262D;
+
+  border-radius: 12px;
+
+  transition: 0.25s ease;
+}
+
+.companyCard:hover {
+  border-color: #E50914;
+
+  transform: translateY(-3px);
+}
+
+.companyCard img {
+  width: 95px;
+
+  height: 45px;
+
+  object-fit: contain;
+
+  margin-bottom: 8px;
+}
+
+.companyNoLogo {
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 8px;
+
+  border-radius: 8px;
+
+  background: #0D1117;
+
+  font-size: 22px;
+}
+
+.companyCard p {
+  width: 100%;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  color: #94A3B8;
+}
+
+
+/* =========================================================
+   FULL CAST
+   ========================================================= */
+
+.castSection {
+  grid-column: 1 / -1;
+
+  margin-top: 45px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid #21262D;
+}
+
+.castGrid {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 15px;
+}
+
+.castCard {
+  overflow: hidden;
+
+  background: #161B22;
+
+  border: 1px solid #21262D;
+
+  border-radius: 12px;
+
+  transition: 0.25s ease;
+}
+
+.castCard:hover {
+  transform: translateY(-5px);
+
+  border-color: #E50914;
+
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.08);
+}
+
+.castCard img,
+.noCastImage {
+  width: 100%;
+
+  height: 210px;
+
+  object-fit: cover;
+}
+
+.noCastImage {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #0D1117;
+
+  font-size: 35px;
+}
+
+.castCard h3 {
+  margin: 10px 10px 3px;
+
+  font-size: 14px;
+
+  color: #F8FAFC;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.castCard p {
+  margin: 0 10px 12px;
+
+  font-size: 11px;
+
+  color: #94A3B8;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   SIMILAR MOVIES
+   ========================================================= */
+
+.similarSection {
+  grid-column: 1 / -1;
+
+  margin-top: 45px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid #21262D;
+}
+
+.similarMovies {
+  display: grid;
+
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 15px;
+}
+
+.similarMovieCard {
+  position: relative;
+
+  display: block;
+
+  height: 230px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  background: #161B22;
+
+  border: 1px solid #21262D;
+
+  transition: 0.25s ease;
+}
+
+.similarMovieCard:hover {
+  transform: translateY(-5px);
+
+  border-color: #E50914;
+}
+
+.similarMovieCard img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.similarOverlay {
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  padding: 30px 10px 10px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+.similarOverlay h3 {
+  margin: 0 0 5px;
+
+  font-size: 13px;
+
+  color: #F8FAFC;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.similarOverlay p {
+  margin: 0;
+
+  font-size: 12px;
+
+  color: #F8FAFC;
+}
+
+
+/* =========================================================
+   TRAILER POPUP
+   ========================================================= */
+
+.trailerOverlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 25px;
+
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.trailerBox {
+  position: relative;
+
+  width: min(900px, 95vw);
+
+  aspect-ratio: 16 / 9;
+
+  background: #161B22;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.trailerBox iframe {
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+}
+
+.closeTrailer {
+  position: absolute;
+
+  top: 10px;
+
+  right: 10px;
+
+  z-index: 2;
+
+  width: 38px;
+
+  height: 38px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(13, 17, 23, 0.9);
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.closeTrailer:hover {
+  background: #E50914;
+}
+
+
+/* =========================================================
+   LAPTOP - 1280 / 1366
+   ========================================================= */
+
+@media (max-width: 1366px) {
+
+  .movieDetails {
+    max-width: 1150px;
+
+    padding: 30px 20px 60px;
+
+    grid-template-columns: 260px minmax(0, 1fr);
+
+    column-gap: 45px;
+  }
+
+  .moviePoster {
+    width: 260px;
+  }
+
+  .moviePoster img {
+    height: 390px;
+  }
+
+  .movieInfo h1 {
+    font-size: 34px;
+  }
+
+  .castGrid,
+  .similarMovies {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
+/* =========================================================
+   SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .movieDetails {
+    grid-template-columns: 230px minmax(0, 1fr);
+
+    column-gap: 40px;
+  }
+
+  .moviePoster {
+    width: 230px;
+  }
+
+  .moviePoster img {
+    height: 345px;
+  }
+
+  .movieInfo h1 {
+    font-size: 30px;
+  }
+
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .castGrid,
+  .similarMovies {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .castCard img,
+  .noCastImage {
+    height: 190px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .movieDetails {
+    display: block;
+
+    padding: 25px 18px 50px;
+  }
+
+  .moviePoster {
+    width: 250px;
+
+    margin: 0 auto 30px;
+  }
+
+  .moviePoster img {
+    height: 370px;
+  }
+
+  .movieInfo {
+    width: 100%;
+  }
+
+  .movieInfo h1 {
+    font-size: 28px;
+  }
+
+  .detailsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .castGrid,
+  .similarMovies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+  .movieDetails {
+    padding: 20px 12px 40px;
+  }
+
+  .moviePoster {
+    width: 210px;
+  }
+
+  .moviePoster img {
+    height: 310px;
+  }
+
+  .movieInfo h1 {
+    font-size: 24px;
+  }
+
+  .movieRating {
+    font-size: 18px;
+  }
+
+  .movieMeta {
+    flex-direction: column;
+
+    gap: 7px;
+  }
+
+  .movieGenres {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productionCompanies {
+    justify-content: center;
+  }
+
+  .castGrid,
+  .similarMovies {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+  .castCard img,
+  .noCastImage {
+    height: 190px;
+  }
+
+  .similarMovieCard {
+    height: 260px;
+  }
+
+  .extraMovieDetails,
+  .castSection,
+  .similarSection {
+    margin-top: 35px;
+
+    padding-top: 25px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .castGrid,
+  .similarMovies {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 9px;
+  }
+
+  .castCard img,
+  .noCastImage {
+    height: 160px;
+  }
+
+  .similarMovieCard {
+    height: 220px;
+  }
+}
