@@ -1,51 +1,143 @@
 .genresPage {
     min-height: 100vh;
-    padding: 60px 30px;
+    padding: 30px 15px;
     background: var(--bg);
     color: var(--text);
     text-align: center;
 }
 
 .genresPage h1 {
-    font-size: 40px;
+    font-size: 42px;
     margin-bottom: 10px;
+  
+    -webkit-background-clip: text;
+    background-clip: text;
+   
+    display: inline-block;
 }
 
 .genresSubtitle {
     color: var(--secondary-text);
     font-size: 17px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .genresGrid {
     max-width: 1100px;
     margin: auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 22px;
 }
 
 .genreCard {
-    padding: 25px 15px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 35px 15px;
+    min-height: 140px;
 
     text-decoration: none;
     color: var(--text);
 
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
 
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
 
-    transition: 0.3s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* Glow blob behind card using genre color */
+.genreCard::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, var(--genre-color) 0%, transparent 65%);
+    opacity: 0.15;
+    transition: opacity 0.35s ease, transform 0.5s ease;
+    z-index: 0;
+}
+
+
+/* .genreCard::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+} */
+
+.genreEmoji {
+    font-size: 38px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.35s ease;
+}
+
+.genreName {
+    position: relative;
+    z-index: 1;
 }
 
 .genreCard:hover {
-    background: var(--primary);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--genre-color);
+    box-shadow: 0 15px 35px -10px var(--genre-color);
+}
+
+.genreCard:hover::before {
+    opacity: 0.35;
+    transform: scale(1.15);
+}
+
+.genreCard:hover::after {
+    left: 125%;
+}
+
+.genreCard:hover .genreEmoji {
+    transform: scale(1.2) rotate(-8deg);
+}
+
+/* Staggered entrance animation */
+.genreCard {
+    animation: fadeUp 0.5s ease backwards;
+}
+.genresGrid .genreCard:nth-child(1) { animation-delay: 0.03s; }
+.genresGrid .genreCard:nth-child(2) { animation-delay: 0.06s; }
+.genresGrid .genreCard:nth-child(3) { animation-delay: 0.09s; }
+.genresGrid .genreCard:nth-child(4) { animation-delay: 0.12s; }
+.genresGrid .genreCard:nth-child(5) { animation-delay: 0.15s; }
+.genresGrid .genreCard:nth-child(6) { animation-delay: 0.18s; }
+.genresGrid .genreCard:nth-child(7) { animation-delay: 0.21s; }
+.genresGrid .genreCard:nth-child(8) { animation-delay: 0.24s; }
+.genresGrid .genreCard:nth-child(9) { animation-delay: 0.27s; }
+.genresGrid .genreCard:nth-child(n+10) { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 800px) {
@@ -58,7 +150,6 @@
     .genresGrid {
         grid-template-columns: 1fr;
     }
-
     .genresPage h1 {
         font-size: 30px;
     }

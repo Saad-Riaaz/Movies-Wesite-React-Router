@@ -1,10 +1,7 @@
 
 import "./Home.css";
 
-import {
-  NavLink,
-  useLoaderData
-} from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 
 import {
   useEffect,
@@ -13,6 +10,7 @@ import {
 
 export const Home = () => {
 
+document.title("Cine Verse")
   const MovieData = useLoaderData();
 
   console.log("MovieData:", MovieData);
@@ -28,7 +26,7 @@ export const Home = () => {
     upcoming
   } = MovieData;
 
-  // ================= HERO SLIDER =================
+ 
 
   const [currentMovie, setCurrentMovie] = useState(0);
 
@@ -54,7 +52,7 @@ export const Home = () => {
 
     <div className="homeMovies">
 
-      {/* ================= HERO BANNER ================= */}
+      
 
       <div className="heroBanner">
 
@@ -109,7 +107,7 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= POPULAR ================= */}
+    
 
       <h1>🔥 Popular Movies</h1>
 
@@ -151,7 +149,7 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= BOLLYWOOD ================= */}
+    
 
       <h1>🇮🇳 Bollywood Movies</h1>
 
@@ -193,7 +191,7 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= HOLLYWOOD ================= */}
+
 
       <h1>🇺🇸 Hollywood Movies</h1>
 
@@ -235,7 +233,7 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= LOLLYWOOD ================= */}
+    
 
       <h1>🇵🇰 Lollywood Movies</h1>
 
@@ -277,7 +275,7 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= TRENDING ================= */}
+   
 
       <h1>🔥 Trending Movies</h1>
 
@@ -319,7 +317,7 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= UPCOMING ================= */}
+     
 
       <h1>🎬 Upcoming Movies</h1>
 
@@ -361,7 +359,6 @@ export const Home = () => {
       </div>
 
 
-      {/* ================= TOP RATED ================= */}
 
       <h1>⭐ Top Rated Movies</h1>
 

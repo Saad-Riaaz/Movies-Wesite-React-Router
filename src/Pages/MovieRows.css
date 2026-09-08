@@ -1,0 +1,31 @@
+.movieRow {
+    margin: 30px 0;
+}
+
+.rowTitle {
+    color: var(--text);
+    font-size: 22px;
+    margin: 0 0 15px 30px;
+}
+
+.rowLoading {
+    color: var(--secondary-text, #999);
+    margin-left: 30px;
+}
+
+.rowScroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 20px;
+    list-style: none;
+    scrollbar-width: thin;
+}
+
+.rowScroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.rowScroll::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}

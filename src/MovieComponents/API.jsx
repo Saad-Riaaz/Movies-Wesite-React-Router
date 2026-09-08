@@ -103,7 +103,7 @@ export const TrendingApi = async () => {
         headers: {
           accept: "application/json",
           Authorization: `Bearer ${Token}`,
-        },
+        }
       }
     );
 
@@ -156,7 +156,7 @@ export const UpcomingApi = async () => {
 
 export const GenreApi = async ({ params }) => {
 
-  console.log("🔥 GenreApi chal raha hai");
+
   console.log("🔥 Params:", params);
 
   const genreId = params.id;
@@ -218,4 +218,117 @@ export const GenreApi = async ({ params }) => {
     topRated,
     latest
   };
+};
+
+
+
+
+export const PopularTVApi = async (page = 1) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/popular?page=${page}`,
+    options
+  );
+  if (!response.ok) throw new Error(`Popular TV API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const TrendingTVApi = async (timeWindow = "week") => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/trending/tv/${timeWindow}`,
+    options
+  );
+  if (!response.ok) throw new Error(`Trending TV API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const TopRatedTVApi = async (page = 1) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/top_rated?page=${page}`,
+    options
+  );
+  if (!response.ok) throw new Error(`Top Rated TV API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const AiringTodayTVApi = async (page = 1) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/airing_today?page=${page}`,
+    options
+  );
+  if (!response.ok) throw new Error(`Airing Today API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const OnAirTVApi = async (page = 1) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/on_the_air?page=${page}`,
+    options
+  );
+  if (!response.ok) throw new Error(`On Air API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const TVDetailsApi = async ({ params }) => {
+  const { id } = params;
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/${id}?append_to_response=videos,credits,similar,reviews,recommendations`,
+    options
+  );
+  if (!response.ok) throw new Error(`TV Details API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const searchTVShows = async (query) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/search/tv?query=${encodeURIComponent(query)}`,
+    options
+  );
+  if (!response.ok) throw new Error(`TV Search API Error: ${response.status}`);
+  return await response.json();
+};
+
+
+export const TVGenreApi = async ({ params }) => {
+  const genreId = params.id;
+
+  const [popularResponse, topRatedResponse, latestResponse] =
+    await Promise.all([
+      fetch(
+        `https://api.themoviedb.org/3/discover/tv?with_genres=${genreId}&sort_by=popularity.desc&page=1`,
+        options
+      ),
+      fetch(
+        `https://api.themoviedb.org/3/discover/tv?with_genres=${genreId}&sort_by=vote_average.desc&vote_count.gte=100&page=1`,
+        options
+      ),
+      fetch(
+        `https://api.themoviedb.org/3/discover/tv?with_genres=${genreId}&sort_by=first_air_date.desc&page=1`,
+        options
+      ),
+    ]);
+
+  if (!popularResponse.ok) throw new Error(`Popular TV Genre Error: ${popularResponse.status}`);
+  if (!topRatedResponse.ok) throw new Error(`Top Rated TV Genre Error: ${topRatedResponse.status}`);
+  if (!latestResponse.ok) throw new Error(`Latest TV Genre Error: ${latestResponse.status}`);
+
+  const popular = await popularResponse.json();
+  const topRated = await topRatedResponse.json();
+  const latest = await latestResponse.json();
+
+  return { popular, topRated, latest };
+};
+
+export const TVGenreListApi = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/genre/tv/list`,
+    options
+  );
+  if (!response.ok) throw new Error(`TV Genre List Error: ${response.status}`);
+  return await response.json();
 };

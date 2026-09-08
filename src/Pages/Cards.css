@@ -1,0 +1,143 @@
+.Container3 {
+    margin: 20px 15px;
+    width: 280px;
+    background-color: #22222B;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.Container3:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+}
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* ---- Poster area ---- */
+.posterWrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.posterWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.Container3:hover .posterWrapper img {
+    transform: scale(1.08);
+    filter: brightness(0.6);
+}
+
+/* Dark gradient at bottom of poster for readability */
+.posterWrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    pointer-events: none;
+}
+
+
+/* Rating badge on top-left of poster */
+.ratingBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+
+    color: #ffd700;
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* ---- Details area ---- */
+.cardDetail {
+    padding: 0;
+}
+
+.cardDetail h2 {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+
+    padding: 14px 10px 2px;
+    margin: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    transition: color 0.3s ease;
+}
+
+.Container3:hover .cardDetail h2 {
+    color: var(--primary);
+}
+
+.cardYear {
+    color: var(--secondary-text, #999);
+    font-size: 13px;
+    text-align: center;
+    margin: 4px 0 12px;
+}
+
+/* ---- Button ---- */
+.MovieBut {
+    width: 100%;
+    padding: 11px 0;
+
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    background-color: transparent;
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        letter-spacing 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.MovieBut:hover {
+    background-color: var(--primary);
+    color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 0 -4px 15px rgba(59, 130, 246, 0.25);
+}
